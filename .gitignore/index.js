@@ -9,7 +9,8 @@ const config = require('./config.json'),
 	  "Imagine Dragons - Believer",
 	  "un concert de musique",
 	  "les derniers albums sorties",
-	  "la radio"
+	  "la radio",
+	  "petit poney. Attends quoi !"
 	];
 
 
