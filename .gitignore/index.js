@@ -71,6 +71,5 @@ client.on('message', async message => {
 	}
 });
 
-
 // Login
 client.login(env.process.TOKEN);
