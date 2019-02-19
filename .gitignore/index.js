@@ -27,7 +27,7 @@ client.on('message', msg => {
 	if (msg.channel.type === 'dm'){
 		msg.channel.send("Je ne réponds pas au message privé !");
 	}
-	if (msg.author.find('id', '512326722352578560').content == "Hey, je suis prêt à faire feu !"){
+	if (msg.content == "Hey, je suis prêt à faire feu !"){
 		msg.channel.send('Cool ta vie !');	
 	}
 	
