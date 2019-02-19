@@ -1,5 +1,5 @@
 const config = require('./config.json'),
-      	cookie = require('./cookie.json.'),
+      	cookie = require('./cookie.json'),
 	Discord = require('discord.js'),
 	client = new Discord.Client(),
       	ytdl = require('ytdl-core'),
