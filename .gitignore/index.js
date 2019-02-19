@@ -1,6 +1,6 @@
 const Discord = require('discord.js'),
 	client = new Discord.Client(),
-      	ytdl = require('./node_modules/ytdl-core'),
+      	ytdl = require('ytdl-core'),
 	activities_list = [
 	  "",
 	  "de la musique", 
@@ -27,6 +27,7 @@ client.on('ready', () => {
 client.on('message', msg => {
 	if (msg.channel.type === 'dm'){
 		msg.channel.send("Je ne réponds pas au message privé !");
+		return;
 	}
 	if (msg.content == "Hey, je suis prêt à faire feu !"){
 		msg.channel.send('Cool ta vie !');
