@@ -50,12 +50,12 @@ client.on('message', async message => {
 			if(!message.guild.me.voiceChannel){
 				if(args[0]){
 					if(validate){
-						const info = ytdl.getInfo(args[0]);
-						const connection = message.member.voiceChannel.join();
-						const dispatcher = connection.playStream(ytdl(args[0], { filter: 'audioonly'}));
-						ytdl.getInfo(args[0]);
+						//const info = ytdl.getInfo(args[0]);
+						//const connection = message.member.voiceChannel.join();
+						//const dispatcher = connection.playStream(ytdl(args[0], { filter: 'audioonly'}));
+						//ytdl.getInfo(args[0]);
 
-						//message.member.voiceChannel.join();
+						message.member.voiceChannel.join();
 					}else if (!validate) {
 						return message.channel.send("Désolé, l'url n'est pas valide !");
 					}
@@ -69,6 +69,7 @@ client.on('message', async message => {
 			return message.channel.send("Connectez-vous à un salon vocal !");
 		}
 	}
+});
 
 // Login
 client.login(process.env.TOKEN);
