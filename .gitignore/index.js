@@ -23,12 +23,16 @@ client.on('ready', () => {
 	}, 2500);
 });
 
-client.on('message', message => {
-	if (message.author.bot) return;
-	if (message.channel.type === 'dm') return;
-
-	if(message.content =="ping") {
-		msg.reply("Pong")	
+client.on('message', msg => {
+	if (msg.channel.type === 'dm'){
+		msg.channel.send("Je ne réponds pas au message privé !");
+	}
+	if (msg.author.find('id', '512326722352578560').content == "Hey, je suis prêt à faire feu !"){
+		msg.channel.send('Cool ta vie !');	
+	}
+	
+	if(msg.content =="ping") {
+		msg.reply("Pong");	
 	}
 });
 
