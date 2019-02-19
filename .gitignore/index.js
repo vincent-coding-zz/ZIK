@@ -1,5 +1,6 @@
 const Discord = require('discord.js'),
 	client = new Discord.Client(),
+      	ytdl = require('ytdl-core')
 	activities_list = [
 	  "",
 	  "de la musique", 
@@ -28,7 +29,8 @@ client.on('message', msg => {
 		msg.channel.send("Je ne réponds pas au message privé !");
 	}
 	if (msg.content == "Hey, je suis prêt à faire feu !"){
-		msg.channel.send('Cool ta vie !');	
+		msg.channel.send('Cool ta vie !');
+	}
 });
 
 // Login
