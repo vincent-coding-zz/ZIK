@@ -1,5 +1,6 @@
 const Discord = require('discord.js'),
 	client = new Discord.Client(),
+      	ytdl = require('ytdl-core'),
 	activities_list = [
 	  "",
 	  "de la musique", 
@@ -29,11 +30,6 @@ client.on('message', msg => {
 	}
 	if (msg.content == "Hey, je suis prêt à faire feu !"){
 		msg.channel.send('Cool ta vie !');	
-	}
-	
-	if(msg.content =="ping") {
-		msg.reply("Pong");	
-	}
 });
 
 // Login
