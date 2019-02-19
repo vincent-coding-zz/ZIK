@@ -45,10 +45,10 @@ client.on('message', async message => {
 
 	// !play
 	if(cmd == `${prefix}play`) {
-		const validate = await ytdl.validateURL(args[0]);
 		if(message.member.voiceChannel) {
 			if(!message.guild.me.voiceChannel){
 				if(args[0]){
+					const validate = await ytdl.validateURL(args[0]);
 					if(validate){
 						//const info = ytdl.getInfo(args[0]);
 						//const connection = message.member.voiceChannel.join();
