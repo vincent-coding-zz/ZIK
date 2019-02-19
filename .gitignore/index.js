@@ -1,12 +1,11 @@
 const Discord = require('discord.js'),
 	client = new Discord.Client(),
-      	ytdl = require('ytdl-core'),
 	activities_list = [
 	  "",
 	  "de la musique", 
 	  "Imagine Dragons - Believer",
 	  "un concert de musique",
-	  "les derniers album sorties",
+	  "les derniers albums sorties",
 	  "la radio"
 	];
 
