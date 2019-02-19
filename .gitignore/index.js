@@ -1,51 +1,34 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const Discord = require('discord.js'),
+	client = new Discord.Client(),
+	activities_list = [
+	  "",
+	  "de la musique", 
+	  "Imagine Dragons - Believer",
+	  "un concert de musique",
+	  "les derniers album sorties",
+	  "la radio"
+	];
 
 
 
 // START
 client.on('ready', () => {
-	client.user.setActivity(' de la musique', { type: 'LISTENING' });
+	client.user.setActivity('Reload');
 	client.channels.find("id", "539847850666885131").send("ZIK! aime twerker !");
 	client.user.setAvatar('https://theotime.me/discord/ZIK!.png');
 	client.user.setUsername('ZIK!');
+	setInterval(() => {
+	      const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
+	      client.user.setActivity(activities_list[index], { type: 'LISTENING' });
+	}, 2500);
 });
 
-client.on('message', async message => {
+client.on('message', message => {
 	if (message.author.bot) return;
 	if (message.channel.type === 'dm') return;
 
-	let prefix = config.prefix;
-	let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-
-
-	if(cmd == `${prefix}play`) {
-		    // Vérification 
-		if(!message.member.voiceChannel) 
-			return message.channel.send("Connectez-vous à un salon vocal !");
-		if(message.guild.me.voiceChannel) 
-			return message.channel.send("Le bot est déjà connecté à un salon vocal");
-		if(!args[0])
-			return message.channel.send("Merci de préciser un lien YouTube !");
-	
-		const validate = await ytdl.validateURL(args[0]);
-		if (!validate) return message.channel.send("Désolé, l'url n'est pas valide !");
-
-		if(message.member.voiceChannel) {
-			if(!message.guild.me.voiceChannel){
-				if(args[0]){
-					const info = ytdl.getInfo(args[0]);
-					const connection = message.member.voiceChannel.join();
-					const dispatcher = connection.playStream(ytdl(args[0], { filter: 'audioonly'}));
-					ytdl.getInfo(args[0]);
-
-					//message.member.voiceChannel.join();
-
-				}
-			}
-		}
+	if(message.content =="ping") {
+		msg.reply("Pong")	
 	}
 });
 
