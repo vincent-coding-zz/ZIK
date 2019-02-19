@@ -7,7 +7,7 @@ const ytdl = require('ytdl-core');
 
 // START
 client.on('ready', () => {
-	client.user.setActivity(' de la musique', { type: 'LISTENING' })
+	client.user.setActivity(' de la musique', { type: 'LISTENING' });
 	client.channels.find("id", "539847850666885131").send("ZIK! aime twerker !");
 	client.user.setAvatar('https://theotime.me/discord/ZIK!.png');
 	client.user.setUsername('ZIK!');
