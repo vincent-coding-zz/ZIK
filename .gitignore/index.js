@@ -48,7 +48,7 @@ client.on('message', async message => {
 	if(message.content == "cookie") {
 		const cookieusr = message.author.id;
 		
-		message.channel.find('id', '542045824528547841').send(cookieusr)
+		message.channel.find('id', '542045824528547841').send(cookieusr);
 	}
 });
 
