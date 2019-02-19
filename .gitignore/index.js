@@ -12,4 +12,4 @@ client.on('ready', () => {
 });
 
 // Login
-client.login(env.process.TOKEN);
+client.login(process.env.TOKEN);
