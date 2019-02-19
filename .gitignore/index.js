@@ -51,24 +51,24 @@ client.on('message', async message => {
 		}
 	}
 
-	if(cmd == `${prefix}stop`) {
-		// Vérification 
-		if(!message.member.voiceChannel)
-			return message.channel.send("Connectez-vous à un salon vocal !");
-		if(!message.guild.me.voiceChannel) 
-			return message.channel.send("Le bot n'est pas connecté dans un salon vocal !");
-		if(!message.guild.me.voiceChannelID !== message.member.voiceChannelID) 
-			return message.channel.send("Vous n'êtes pas dans le même salon que le bot");
+//	if(cmd == `${prefix}stop`) {
+//		// Vérification 
+//		if(!message.member.voiceChannel)
+//			return message.channel.send("Connectez-vous à un salon vocal !");
+//		if(!message.guild.me.voiceChannel) 
+//			return message.channel.send("Le bot n'est pas connecté dans un salon vocal !");
+//		if(!message.guild.me.voiceChannelID !== message.member.voiceChannelID) 
+//			return message.channel.send("Vous n'êtes pas dans le même salon que le bot");
 		
-		if(message.member.voiceChannel) {
-			if(message.guild.me.voiceChannel) {
-				if(message.me.voiceChannelID) {
-					message.guild.me.voiceChannel.leave();
-					message.delete();
-				}
-			}
-		}
-	}
+//		if(message.member.voiceChannel) {
+//			if(message.guild.me.voiceChannel) {
+//				if(message.me.voiceChannelID) {
+//					message.guild.me.voiceChannel.leave();
+//					message.delete();
+//				}
+//			}
+//		}
+//	}
 });
 
 // Login
