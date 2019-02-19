@@ -1,6 +1,6 @@
 const Discord = require('discord.js'),
 	client = new Discord.Client(),
-      	ytdl = require('ytdl-core')
+      	ytdl = require('./node_modules/ytdl-core'),
 	activities_list = [
 	  "",
 	  "de la musique", 
