@@ -45,7 +45,11 @@ client.on('message', async message => {
    	let cmd = messageArray[0];
     	let args = messageArray.slice(1);
 
-	//		COOKIE
+	//	Usercount
+	if(message.content == "!usercount") {
+		const nbrmember = message.member.memberCount;
+		message.channel.reply(`Il y a actuellement : ${nbrmember}`);
+	}
 });
 
 
