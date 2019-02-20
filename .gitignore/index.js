@@ -41,7 +41,7 @@ client.on('ready', () => {
 client.on('message', msg => {
 	var m = msg.content.toLowerCase();
 	
-	let messageArray = msg.content.spit(' ');
+	let messageArray = msg.content.split(' ');
 	let command = messageArray[0];
 	let args = messageArray.slice(1);
 
