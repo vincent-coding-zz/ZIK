@@ -100,12 +100,12 @@ client.on('message', msg => {
 		let reportedReason = args.join(" ").slice(22);
 		
 		
-		let reportEmbed = new Discord.RichEmbed(),
-		   .setDescription("Reports"),
-		   .setColor("#FF0000"),
-		   .addField("Utilisateur reporté", `${reportedUser} (ID: ${reportedUser.id})`),
-		   .addField("Utilisateur reporté", `${msg.author} (ID: ${msg.author.id})`),
-	 	   .addField("Canal", msg.channel),
+		let reportEmbed = new Discord.RichEmbed()
+		   .setDescription("Reports")
+		   .setColor("#FF0000")
+		   .addField("Utilisateur reporté", `${reportedUser} (ID: ${reportedUser.id})`)
+		   .addField("Utilisateur reporté", `${msg.author} (ID: ${msg.author.id})`)
+	 	   .addField("Canal", msg.channel)
 		   .addField("Raison", reportedReason);
 		
 		let reportChannel = msg.guild.channels.find(`id`, "547878085542805505");
