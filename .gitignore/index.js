@@ -48,7 +48,7 @@ client.on('message', async message => {
 	//	Usercount
 	if(message.content == "!usercount") {
 		const nbrmember = message.memberCount;
-		message.channel.reply(`Il y a actuellement : ${nbrmember}`);
+		message.channel.send(`Il y a actuellement : ${nbrmember}`);
 	}
 });
 
