@@ -40,6 +40,10 @@ client.on('ready', () => {
 ====================================================== */
 client.on('message', msg => {
 	var m = msg.content.toLowerCase();
+	
+	let messageArray = msg.content.spit(' ');
+	let command = messageArray[0];
+	let args = messageArray.slice(1);
 
 	function isAdmin(){
 		if (msg.author.id == "483335511159865347" || msg.author.id == "467630539898224661"){
@@ -83,6 +87,33 @@ client.on('message', msg => {
 			"title":"Mes créateurs","description":"Mon développeurs principale est : @legameur6810#4488\nMon dévelopeurs secondaire est : @Théotime#6461\n\nSe sont mes uniques créateur, si une personne essaye de se faire passer pour eux :\n !report @sonspeudo raison\nExemples : !report @legameur6810#4488 Le meilleurs admins",
 			"color":16777215
 		}});
+	}
+	
+	// Report un utilisateur
+	if(m=="!report") {
+		let reportedUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
+		
+		if (!reportedUser) {
+			return msg.channel.send("L'utilisateur n'existe pas !");	
+		}
+		let reportedReason = args.join(" ").slice(22);
+		
+		
+		let reportEmbed = new Discord.RichEmbed()
+		   .setDescription("Reports")
+		   .setColor("#FF0000")
+		   .addField("Utilisateur reporté", `${reportedUser} (ID: ${reportedUser.id})`)
+		   .addField("Utilisateur reporté", `${msg.author} (ID: ${msg.author.id})`)
+	 	   .addField("Canal", msg.channel)
+		   .addField("Raison", reportedReason);
+		
+		let reportChannel = msg.guild.channels.find(`id`, "547878085542805505");
+		if (!reportChannel) {
+			return msg.channel.send("Salon introuvables !");
+		}
+		
+		msg.delete();
+		reportChannel.send(reportEmbed);
 	}
 });
 
