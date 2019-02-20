@@ -46,7 +46,7 @@ client.on('message', async message => {
     	let args = messageArray.slice(1);
 
 	//	Usercount
-	if(message.content == "!usercount") {
+	if(message.content == "usercount") {
 		const nbrmember = message.member.guild.memberCount;
 		message.channel.send({"embed":{"title":"**:boy: Nombres d'utilisateur :girl: **","description":"Il y a actuellement "+nbrmember+" personnes uniques sur le serveur !","color":16777215}});
 	}
