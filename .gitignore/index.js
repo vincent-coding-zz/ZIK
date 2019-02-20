@@ -1,3 +1,12 @@
+/* ZIK! Bot
+Created by legameur6810#4488
+For the server Theotime.me
+https://discord.gg/PuU3BSJ
+*/
+
+/*   1 / Variables
+====================================================== */
+
 const config = require('./config.json'),
       	cookie = require('./cookie.json'),
 	Discord = require('discord.js'),
@@ -14,8 +23,8 @@ const config = require('./config.json'),
 	];
 
 
-
-// START
+/*   2/ Lancement du bot
+====================================================== */
 client.on('ready', () => {
 	client.user.setActivity('Reload');
 	client.channels.find("id", "539847850666885131").send("ZIK! aime twerker !");
@@ -26,26 +35,51 @@ client.on('ready', () => {
 	}, 2500);
 });
 
-// Pour roboto (channel privé)
+
+/*   3 / Functions
+====================================================== */
 client.on('message', msg => {
-	if (msg.channel.type === 'dm') return;
+	var m = msg.content.toLowerCase();
+
+	function isAdmin(){
+		if (msg.author.id == "483335511159865347" || msg.author.id == "467630539898224661"){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	function isAuth(){ // use msg.author
+		if (msg.member.roles.find('name', 'noBot')){
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	if (msg.author.bot) return false;
+	if (msg.channel.type == "dm") return false;
+	
+	
+/*   4 / Custom commande 
+====================================================== */
+	// Réponds a Roboto
 	if (msg.content == "Hey, je suis prêt à faire feu !"){
 		msg.channel.send('Cool ta vie !');
 	}
-});
-
-// MUSIQUE
-client.on('message', async message => {
-	if (message.author.bot) return;
-	if (message.channel.type === 'dm') return;
-
-	//	Usercount
-	if(message.content == "usercount") {
-		const nbrmember = message.member.guild.memberCount;
-		message.channel.send({"embed":{"title":"**:boy: Nombres d'utilisateur :girl: **","description":"Il y a actuellement "+nbrmember+" personnes uniques sur le serveur !","color":16777215}});
+	
+	// Usercount
+	if(m=="usercount") {
+		const nbrmember = msg.member.guild.memberCount;
+		msg.channel.send({"embed":{
+			"title":"**:boy: Nombres d'utilisateur :girl: **","description":"Il y a actuellement "+nbrmember+" personnes uniques sur le serveur !",
+			"color":16777215
+		}});
 	}
 });
 
 
-// Login
+
+/*   5 / Login
+====================================================== */
 client.login(process.env.TOKEN);
