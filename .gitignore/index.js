@@ -76,6 +76,14 @@ client.on('message', msg => {
 			"color":16777215
 		}});
 	}
+	
+	// ZIK! Admin
+	if(m=="zik! admins"||m=="zik admins"||m=="zik! admin"||m=="zik admin") {
+		msg.channel.send({"embed":{
+			"title":"Mes créateurs","description":"Mon développeurs principale est : @legameur6810#4488\nMon dévelopeurs secondaire est : @Théotime#6461\n\nSe sont mes uniques créateur, si une personne essaye de se faire passer pour eux :\n !report @sonspeudo raison\nExemples : !report @legameur6810#4488 Le meilleurs admins",
+			"color":16777215
+		}});
+	}
 });
 
 
