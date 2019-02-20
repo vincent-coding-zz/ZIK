@@ -9,7 +9,7 @@ https://discord.gg/PuU3BSJ
 
 const config = require('./config.json'),
       	cookie = require('./cookie.json'),
-	Discord = require('discord.js'),
+	Discord = require('discord.js'), 
 	client = new Discord.Client(),
       	ytdl = require('ytdl-core'),
 	activities_list = [
@@ -90,6 +90,7 @@ client.on('message', msg => {
 	}
 	
 	// Report un utilisateur
+	//Non fonctionnel !
 	if(m=="!report") {
 		let reportedUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
 		
@@ -99,22 +100,22 @@ client.on('message', msg => {
 		let reportedReason = args.join(" ").slice(22);
 		
 		
-		let reportEmbed = new Discord.RichEmbed()
-		   .setDescription("Reports")
-		   .setColor("#FF0000")
-		   .addField("Utilisateur reporté", `${reportedUser} (ID: ${reportedUser.id})`)
-		   .addField("Utilisateur reporté", `${msg.author} (ID: ${msg.author.id})`)
-	 	   .addField("Canal", msg.channel)
+		let reportEmbed = new Discord.RichEmbed(),
+		   .setDescription("Reports"),
+		   .setColor("#FF0000"),
+		   .addField("Utilisateur reporté", `${reportedUser} (ID: ${reportedUser.id})`),
+		   .addField("Utilisateur reporté", `${msg.author} (ID: ${msg.author.id})`),
+	 	   .addField("Canal", msg.channel),
 		   .addField("Raison", reportedReason);
 		
 		let reportChannel = msg.guild.channels.find(`id`, "547878085542805505");
 		if (!reportChannel) {
 			return msg.channel.send("Salon introuvables !");
 		}
-		
 		msg.delete();
 		reportChannel.send(reportEmbed);
 	}
+	
 });
 
 
