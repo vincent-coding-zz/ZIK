@@ -19,7 +19,6 @@ const config = require('./config.json'),
 client.on('ready', () => {
 	client.user.setActivity('Reload');
 	client.channels.find("id", "539847850666885131").send("ZIK! aime twerker !");
-	client.user.setAvatar('https://theotime.me/discord/ZIK!.png');
 	client.user.setUsername('ZIK!');
 	setInterval(() => {
 	      const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
@@ -43,7 +42,7 @@ client.on('message', async message => {
 	//	Usercount
 	if(message.content == "usercount") {
 		const nbrmember = message.member.guild.memberCount;
-		const nbrmemberonline = message.member.connections.guild.memberCount;
+		// const nbrmemberonline = message.member.connections.guild.memberCount;
 		message.channel.send({"embed":{"title":"**:boy: Nombres d'utilisateur :girl: **","description":"Il y a actuellement "+nbrmember+" personnes uniques sur le serveur !\nIl y a actuellement "+nbrmemberonline+" personne connecté !","color":16777215}});
 	}
 });
