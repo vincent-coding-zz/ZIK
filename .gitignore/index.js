@@ -42,7 +42,7 @@ client.on('message', async message => {
 	var m = msg.content.toLowerCase();
 
 	//	Usercount
-	if(m.content == "usercount" ||m.content == "!usercount") {
+	if(m.includes == "usercount") {
 		const nbrmember = message.member.guild.memberCount;
 		message.channel.send({"embed":{"title":"**:boy: Nombres d'utilisateur :girl: **","description":"Il y a actuellement "+nbrmember+" personnes uniques sur le serveur !","color":16777215}});
 	}
