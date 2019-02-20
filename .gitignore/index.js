@@ -43,7 +43,7 @@ client.on('message', async message => {
 	//	Usercount
 	if(message.content == "usercount") {
 		const nbrmember = message.member.guild.memberCount;
-		const nbrmemberonline = message.member.connections.memberCount;
+		const nbrmemberonline = message.member.connections.guild.memberCount;
 		message.channel.send({"embed":{"title":"**:boy: Nombres d'utilisateur :girl: **","description":"Il y a actuellement "+nbrmember+" personnes uniques sur le serveur !\nIl y a actuellement "+nbrmemberonline+" personne connecté !","color":16777215}});
 	}
 });
