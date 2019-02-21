@@ -21,6 +21,7 @@ const config = require('./config.json'),
 	  "petit poney. Attends quoi !"
 	],
       chat_list = [
+	 "",
 	 "https://vincent-p.netlify.com/discord/zik!/chat1.png",
 	 "https://vincent-p.netlify.com/discord/zik!/chat2.png",
 	 "https://vincent-p.netlify.com/discord/zik!/chat3.png",
@@ -95,10 +96,11 @@ client.on('message', msg => {
 	if(m=="!cat"||m=="!chat") {
 		const chat_index = Math.floor(Math.random() * (chat_list.length - 1) + 1);
 		const chat_index_embed = chat_list[chat_index];
+		const msgmembername = msg.member.user;
 		msg.channel.send({"embed": {
         		"color": 16777215,
         		"title": "Voila",
-        		"description": "Voici le chat que dddddd a demandé !\n\n",
+        		"description": "Voici le chat que "+msgmembername+" a demandé !\n\n",
 			"image": {
            		"url": chat_index_embed
 		        }
