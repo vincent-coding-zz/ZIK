@@ -88,7 +88,7 @@ client.on('message', msg => {
 		if(isAdmin()) {
 			msg.channel.send("Tu est admin");	
 		}else {
-			msg.channel.send("tu n'est pas admin")	
+			msg.channel.send("tu n'est pas admin");
 		}
 	}
 	
