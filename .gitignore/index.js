@@ -115,7 +115,7 @@ client.on('message', msg => {
 		        }
 		}});
 	}
-	if(m=="!chien"||m=="!dpg") {
+	if(m=="!chien"||m=="!dog") {
 		const chien_index = Math.floor(Math.random() * (chien_list.length - 1) + 1);
 		const chien_index_embed = chien_list[chien_index];
 		const msgmembername = msg.member.user;
