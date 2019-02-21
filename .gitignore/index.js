@@ -98,8 +98,11 @@ client.on('message', msg => {
 		msg.channel.send({"embed": {
         		"color": 16777215,
         		"title": "Voila",
-        		"description": "Voici le chat que dddddd a demandé !\n\n"
-		}}`${chat_index_embed}`;
+        		"description": "Voici le chat que dddddd a demandé !\n\n",
+			"image": {
+           		"url": chat_index_embed
+		        }
+		}});
 	}
 	
 });
