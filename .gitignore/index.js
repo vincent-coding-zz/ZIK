@@ -99,7 +99,7 @@ client.on('message', msg => {
         		"color": 16777215,
         		"title": "Voila",
         		"description": "Voici le chat que dddddd a demandé !\n\n"
-		}}`${chat_index_embed};
+		}}`${chat_index_embed`};
 	}
 	
 });
