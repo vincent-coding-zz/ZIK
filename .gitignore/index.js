@@ -84,6 +84,14 @@ client.on('message', msg => {
 		}});
 	}
 	
+	if(m=="!role set") {
+		if(isAdmin()) {
+			msg.channel.send("Tu est admin");	
+		}else {
+			msg.channel.send("tu n'est pas admin")	
+		}
+	}
+	
 	
 });
 
