@@ -28,6 +28,15 @@ const config = require('./config.json'),
 	 "https://vincent-p.netlify.com/discord/zik!/chat4.png",
 	 "https://vincent-p.netlify.com/discord/zik!/chat5.png",
 	 "https://vincent-p.netlify.com/discord/zik!/chat6.png"
+      ],
+      chien_list = [
+	 "",
+	 "https://vincent-p.netlify.com/discord/zik!/chien1.jpg",
+	 "https://vincent-p.netlify.com/discord/zik!/chien2.png",
+	 "https://vincent-p.netlify.com/discord/zik!/chien3.png",
+	 "https://vincent-p.netlify.com/discord/zik!/chien4.png",
+	 "https://vincent-p.netlify.com/discord/zik!/chien5.png",
+	 "https://vincent-p.netlify.com/discord/zik!/chien6.png"
       ];
 
 
@@ -103,6 +112,19 @@ client.on('message', msg => {
         		"description": "Voici le chat que "+msgmembername+" a demandé !\n\n",
 			"image": {
            		"url": chat_index_embed
+		        }
+		}});
+	}
+	if(m=="!chien"||m=="!dpg") {
+		const chien_index = Math.floor(Math.random() * (chien_list.length - 1) + 1);
+		const chien_index_embed = chien_list[chien_index];
+		const msgmembername = msg.member.user;
+		msg.channel.send({"embed": {
+        		"color": 16777215,
+        		"title": "Voila",
+        		"description": "Voici le chien que "+msgmembername+" a demandé !\n\n",
+			"image": {
+           		"url": chien_index_embed
 		        }
 		}});
 	}
