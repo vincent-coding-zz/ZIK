@@ -19,7 +19,13 @@ const config = require('./config.json'),
 	  "les derniers albums sorties",
 	  "la radio",
 	  "petit poney. Attends quoi !"
-	];
+	],
+      chat_list = [
+	 "https://images.ecosia.org/2UXFqFPCQGvqsAcZmUY0ud3CXCg=/0x390/smart/http%3A%2F%2Fekladata.com%2FlH66DD85i2NAKMUbhBxVC_Y4RDo.png",
+	 "https://images.ecosia.org/MJY-JarM6SxJz26IqPechP7UYGI=/0x390/smart/http%3A%2F%2Fkids.nationalgeographic.com%2Fetc%2Fdesigns%2Fkids%2Fapps-libs%2Fmodules%2FModal%2Fimages%2Fcute-kitten.png",
+	 "https://images.ecosia.org/REkLCvhmQlYoqupgWC6AJqM8Qck=/0x390/smart/http%3A%2F%2Fboardingtheark.co.uk%2Fimages%2Ftestimonies%2Fcat-1.png",
+	 "https://images.ecosia.org/fFz6Ukqs_SvWV26BHzrcZNSwRBo=/0x390/smart/http%3A%2F%2Ffreepngimages.com%2Fwp-content%2Fuploads%2F2015%2F06%2Fkitten-playing.png"
+      ];
 
 
 /*   2/ Lancement du bot
@@ -84,7 +90,15 @@ client.on('message', msg => {
 		}});
 	}
 
-	
+	if(m=="!cat"||m=="!chat") {
+		const chat_index = Math.floor(Math.random() * (chat_list.length - 1) + 1);
+		const chat_index_embed = chat_list[chat_index];
+		msg.channel.send({"embed": {
+        		"color": 16777215,
+        		"title": "Voila",
+        		"description": "Voici le chat que dddddd a demandé !\n\n"+chat_index_embed
+		}});
+	}
 	
 });
 
