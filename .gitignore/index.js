@@ -83,14 +83,7 @@ client.on('message', msg => {
 			"color":16777215
 		}});
 	}
-	
-	if(m=="!role set") {
-		if(isAdmin()) {
-			msg.channel.send("Tu est admin");	
-		}else {
-			msg.channel.send("tu n'est pas admin");
-		}
-	}
+
 	
 	
 });
