@@ -142,17 +142,17 @@ client.on('message', msg => {
 		        }
 		}});
 	}
-	
-	if (command === "test") {
-		msg.channel.send("Bot foncionnel");
-		return;
+		
+	if (command === "say") {
+		if(isAdmin) {
+			msg.delete();
+			if (!suffix) return;
+			msg.channel.send(`${suffix}`);
+		}else {
+			msg.channel.send("Vous devez être admin pour éxecuter cette commande !");
+		}
 	}
 	
-	if (command === "bgtest") {
-		msg.delete()
-		if (!suffix) return
-		msg.channel.send(`${suffix}`);
-	}
 });
 
 
