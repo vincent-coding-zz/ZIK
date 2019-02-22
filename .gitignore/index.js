@@ -60,7 +60,7 @@ client.on('message', msg => {
 	var m = msg.content.toLowerCase(),
 		command = msg.content.split(" ")[0].slice(prefix.length).toLowerCase(),
 		args = msg.content.split(" ").slice(1);
-	
+	let suffix = args.join(" ");
 	function isAdmin(){
 		if (msg.author.id == "483335511159865347" || msg.author.id == "467630539898224661"){
 			return true;
@@ -146,6 +146,12 @@ client.on('message', msg => {
 	if (command === "test") {
 		msg.channel.send("Bot foncionnel");
 		return;
+	}
+	
+	if (command === "bgtest") {
+		msg.delete()
+		if (!suffix) return
+		msg.channel.send(`${suffix}`);
 	}
 });
 
