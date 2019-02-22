@@ -144,12 +144,13 @@ client.on('message', msg => {
 	}
 		
 	if (command === "say") {
-		if(isAdmin) {
+		if(!isAdmin) {
+			msg.channel.send("Vous devez être admin pour éxecuter cette commande !");
+			return;
+		}else {
 			msg.delete();
 			if (!suffix) return;
 			msg.channel.send(`${suffix}`);
-		}else {
-			msg.channel.send("Vous devez être admin pour éxecuter cette commande !");
 		}
 	}
 	
