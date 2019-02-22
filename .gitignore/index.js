@@ -57,7 +57,7 @@ client.on('ready', () => {
 /*   3 / Functions
 ====================================================== */
 client.on('message', msg => {
-	var command = msg.content.replace(prefix),
+	var command = msg.content.replace(prefix, ""),
         	args = msg.content.split(" ").slice(1);
     	let suffix = args.join(" ");
 	function isAdmin(){
