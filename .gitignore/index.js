@@ -8,7 +8,6 @@ https://discord.gg/PuU3BSJ
 ====================================================== */
 
 const Discord = require('discord.js'), 
-      	fs = require('fs'),
 	client = new Discord.Client(),
       	ytdl = require('ytdl-core'),
 	activities_list = [
