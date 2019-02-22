@@ -163,7 +163,9 @@ client.on('message', msg => {
     				}});
 				return;
 			}else {
-				suffix.member.kick()
+				suffix.guild.member.kick()
+					.then(() => console.log(`Kicked ${member.displayName}`))
+  					.catch(console.error);
 				msg.channel.send(`${suffix} à bien été kick !`);
 			}
 		}else {
