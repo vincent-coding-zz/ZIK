@@ -11,6 +11,7 @@ const config = require('./config.json'),
 	Discord = require('discord.js'), 
 	client = new Discord.Client(),
       	ytdl = require('ytdl-core'),
+        prefix = "!",
 	activities_list = [
 	  "",
 	  "de la musique", 
@@ -56,8 +57,10 @@ client.on('ready', () => {
 /*   3 / Functions
 ====================================================== */
 client.on('message', msg => {
-	var m = msg.content.toLowerCase();
-
+	var m = msg.content.toLowerCase(),
+		command = msg.content.split(" ")[0].slice(prefix.length).toLowerCase(),
+		args = msg.content.split(" ").slice(1);
+	
 	function isAdmin(){
 		if (msg.author.id == "483335511159865347" || msg.author.id == "467630539898224661"){
 			return true;
@@ -74,8 +77,19 @@ client.on('message', msg => {
 		}
 	}
 	
+	// Pour éviter que le bot se réponde tout seul
 	if (msg.author.bot) return false;
 	if (msg.channel.type == "dm") return false;
+
+	if ( msg.member.roles.find(val => val.name === 'Muted')) {
+		msg.delete();
+		msg.author.createDM().then(channel => {
+			return channel.send('Désolé, vous avez été mute car vous n\'avez pas respecté les <#540256081293606915>');
+	 	});
+		return false;
+	}
+	
+
 	
 	
 /*   4 / Custom commande 
@@ -129,9 +143,14 @@ client.on('message', msg => {
 		}});
 	}
 	
+	if (command === "test") {
+		msg.channel.send("Bot foncionnel");
+		return;
+	}
 });
 
 
 /*   5 / Login
 ====================================================== */
+
 client.login(process.env.TOKEN);
