@@ -152,32 +152,6 @@ client.on('message', msg => {
 			msg.channel.send("Vous devez être admin pour éxecuter cette commande !");
 		}
 	}
-	if (command === "kick") {
-		if(isAdmin()) {
-			msg.delete();
-			if (!suffix) {
-				msg.channel.send({"embed": {
-        				"color": 16711680,
-        				"title": "Erreur",
-        				"description": "Veuillez indiquer le nom de l'utilisateur à kick !"
-    				}});
-				return;
-			}else {
-				suffix.guild.member.kick()
-					.then(() => console.log(`Kicked ${member.displayName}`))
-  					.catch(console.error);
-				msg.channel.send(`${suffix} à bien été kick !`);
-			}
-		}else {
-			msg.delete();
-			msg.channel.send({"embed": {
-        			"color": 16711680,
-        			"title": "Erreur",
-        			"description": "Vous devez être admin pour éxecuter cette commande !"
-			}});
-			return;
-		}
-	}
 	
 });
 
