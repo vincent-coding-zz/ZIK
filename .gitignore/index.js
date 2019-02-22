@@ -11,7 +11,7 @@ const config = require('./config.json'),
 	Discord = require('discord.js'), 
 	client = new Discord.Client(),
       	ytdl = require('ytdl-core'),
-        prefix = "?",
+        prefix = "!",
 	activities_list = [
 	  "",
 	  "de la musique", 
@@ -108,7 +108,7 @@ client.on('message', msg => {
 	}
 	
 	// ZIK! Admin
-	if(command === "admin"||command==="admins") {
+	if(command === "admin"||command === "admins") {
 		msg.channel.send({"embed":{
 			"title":"Mes créateurs","description":"Mon développeurs principale est : @legameur6810#4488\nMon dévelopeurs secondaire est : @Théotime#6461\n\nSe sont mes uniques créateur, si une personne essaye de se faire passer pour eux :\n !report @sonspeudo raison\nExemples : !report @legameur6810#4488 Le meilleurs admins",
 			"color":16777215
@@ -141,16 +141,43 @@ client.on('message', msg => {
 		        }
 		}});
 	}
-		
+	
+	
 	if (command === "say") {
+	const saymembername = msg.member.user;
 		if(isAdmin()) {
 			msg.delete();
-			if (!suffix) return;
+			if (!suffix) {
+				msg.author.createDM().then(channel => {
+					return channel.send({"embed": {
+						"title": "Erreur de syntaxe",
+						"color": 16711680,
+						"description": "Vous avez faire une erreur de syntaxe, voici la commande :\n\n!say Mon message"
+    					}});
+	 			});
+				return;
+			}
+			
 			msg.channel.send(`${suffix}`);
 		}else {
-			msg.channel.send("Vous devez être admin pour éxecuter cette commande !");
+			msg.delete();
+			if (!suffix) {
+				msg.author.createDM().then(channel => {
+					return channel.send({"embed": {
+						"title": "Erreur de syntaxe",
+						"color": 16711680,
+						"description": "Vous avez faire une erreur de syntaxe, voici la commande :\n\n!say Mon message"
+    					}});
+	 			});
+				return;
+			}
+			
+			msg.channel.send(`${suffix}\n\nCe message a été posté par : ${saymembername}`);
+			
 		}
 	}
+	
+	
 	
 });
 
