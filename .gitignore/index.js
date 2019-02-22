@@ -119,7 +119,7 @@ client.on('message', msg => {
 	// ZIK! Admin
 	if(command === "admin") {
 		msg.channel.send({"embed":{
-			"title":"Mes créateurs","description":"Mon développeurs principale est : @legameur6810#4488\nMon dévelopeurs secondaire est : @Théotime#6461\n\nSe sont mes uniques créateur, si une personne essaye de se faire passer pour eux :\n !report @sonspeudo raison\nExemples : !report @legameur6810#4488 Le meilleurs admins",
+			"title":"Mes créateurs","description":"Mon développeurs principal est : @legameur6810#4488\nMon dévelopeurs secondaire est : @Théotime#6461\n\nSe sont mes uniques créateur, si une personne essaye de se faire passer pour eux :\n !report @sonspeudo raison\nExemples : !report @legameur6810#4488 Le meilleurs admins",
 			"color":16777215
 		}});
 	}
