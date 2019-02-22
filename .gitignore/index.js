@@ -57,8 +57,7 @@ client.on('ready', () => {
 /*   3 / Functions
 ====================================================== */
 client.on('message', msg => {
-	var m = msg.content.toLowerCase(),
-		command = msg.content.split(" ")[0].slice(prefix.length).toLowerCase(),
+	var command = msg.content.split(" ")[0].slice(prefix.length).toLowerCase(),
 		args = msg.content.split(" ").slice(1);
 	let suffix = args.join(" ");
 	function isAdmin(){
@@ -100,7 +99,7 @@ client.on('message', msg => {
 	}
 	
 	// Usercount
-	if(m=="usercount") {
+	if(command === "usercount"|| command === "users") {
 		const nbrmember = msg.member.guild.memberCount;
 		msg.channel.send({"embed":{
 			"title":"**:boy: Nombres d'utilisateur :girl: **","description":"Il y a actuellement "+nbrmember+" personnes uniques sur le serveur !",
@@ -116,7 +115,7 @@ client.on('message', msg => {
 		}});
 	}
 
-	if(m=="!cat"||m=="!chat") {
+	if(command === "cat"|| command === "chat") {
 		const chat_index = Math.floor(Math.random() * (chat_list.length - 1) + 1);
 		const chat_index_embed = chat_list[chat_index];
 		const msgmembername = msg.member.user;
@@ -129,7 +128,7 @@ client.on('message', msg => {
 		        }
 		}});
 	}
-	if(m=="!chien"||m=="!dog") {
+	if(command === "dog"|| command === "chien") {
 		const chien_index = Math.floor(Math.random() * (chien_list.length - 1) + 1);
 		const chien_index_embed = chien_list[chien_index];
 		const msgmembername = msg.member.user;
