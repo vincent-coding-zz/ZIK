@@ -202,7 +202,7 @@ client.on('message', msg => {
 				return;
 			}
 			
-			msg.channel.send(`\`\`\`\n${suffix}\`\`\``);
+			msg.channel.send(`\`\`\`Markdown\n${suffix}\`\`\`\n\n Posté par un administrateur.`);
 		}else {
 			msg.delete();
 			if (!suffix) {
@@ -215,7 +215,7 @@ client.on('message', msg => {
 	 			});
 				return;
 			};
-			msg.channel.send(`${suffix}\n\nCe message a été posté par : ${saymembername}`);
+			msg.channel.send(`\`\`\`Markdown\n${suffix}\`\`\`\n\n Posté par ${saymembername}`);
 		}
 	}
 	
