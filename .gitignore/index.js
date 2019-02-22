@@ -163,7 +163,7 @@ client.on('message', msg => {
     				}});
 				return;
 			}else {
-				msg.member.kick()
+				suffix.member.kick()
 				msg.channel.send(`${suffix} à bien été kick !`);
 			}
 		}else {
