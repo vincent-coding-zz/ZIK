@@ -221,7 +221,7 @@ client.on('message', msg => {
 	
 	//help or aide
 	if(command === "help"||command === "aide"||command === "aides") {
-		const checkchannel = msg.channel.get.id;
+		const checkchannel = msg.channel.id;
 		const helpmembername = msg.member.user;
 		if(checkchannel = "547833672011743253") {
 			msg.delete()
