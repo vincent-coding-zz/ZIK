@@ -57,7 +57,7 @@ client.on('ready', () => {
 ====================================================== */
 client.on('message', msg => {
 	const prefix = "!";
-	var command = msg.content.split(" ")[0].slice(prefix.length).toLowerCase(),
+	var command = msg.content.split(" ")[0].slice(prefix.content).toLowerCase(),
        		args = msg.content.split(" ").slice(1);
     	let suffix = args.join(" ");
 	
