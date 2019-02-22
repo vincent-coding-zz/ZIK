@@ -122,7 +122,8 @@ client.on('message', msg => {
 			"color":16777215
 		}});
 	}
-
+	
+	// Random cat
 	if(command === "cat") {
 		const chat_index = Math.floor(Math.random() * (chat_list.length - 1) + 1);
 		const chat_index_embed = chat_list[chat_index];
@@ -136,6 +137,8 @@ client.on('message', msg => {
 		        }
 		}});
 	}
+	
+	//Random dog
 	if(command === "dog"|| command === "chien") {
 		const chien_index = Math.floor(Math.random() * (chien_list.length - 1) + 1);
 		const chien_index_embed = chien_list[chien_index];
@@ -150,7 +153,7 @@ client.on('message', msg => {
 		}});
 	}
 	
-	
+	// Say
 	if (command === "say") {
 	const saymembername = msg.member.user;
 		if(isAdmin()) {
@@ -169,11 +172,52 @@ client.on('message', msg => {
 			msg.channel.send(`${suffix}`);
 		}else {
 			msg.delete();
-			if (!suffix) return;
+			if (!suffix) {
+				msg.author.createDM().then(channel => {
+					return channel.send({"embed": {
+						"title": "Erreur de syntaxe",
+						"color": 16711680,
+						"description": "Vous avez faire une erreur de syntaxe, voici la commande :\n\n!say Mon message"
+    					}});
+	 			});
+				return;
+			}
 			msg.channel.send(`${suffix}\n\nCe message a été posté par : ${saymembername}`);
 		}
 	}
 	
+	// code
+	if (command === "code") {
+	const saymembername = msg.member.user;
+		if(isAdmin()) {
+			msg.delete();
+			if (!suffix) {
+				msg.author.createDM().then(channel => {
+					return channel.send({"embed": {
+						"title": "Erreur de syntaxe",
+						"color": 16711680,
+						"description": "Vous avez faire une erreur de syntaxe, voici la commande :\n\n!code Mon code"
+    					}});
+	 			});
+				return;
+			}
+			
+			msg.channel.send(`\`\`\`\n${suffix}\`\`\``);
+		}else {
+			msg.delete();
+			if (!suffix) {
+				msg.author.createDM().then(channel => {
+					return channel.send({"embed": {
+						"title": "Erreur de syntaxe",
+						"color": 16711680,
+						"description": "Vous avez faire une erreur de syntaxe, voici la commande :\n\n!code Mon code"
+    					}});
+	 			});
+				return;
+			};
+			msg.channel.send(`${suffix}\n\nCe message a été posté par : ${saymembername}`);
+		}
+	}
 	
 	
 });
