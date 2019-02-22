@@ -11,7 +11,7 @@ const config = require('./config.json'),
 	Discord = require('discord.js'), 
 	client = new Discord.Client(),
       	ytdl = require('ytdl-core'),
-        prefix = "!",
+        prefix = "?",
 	activities_list = [
 	  "",
 	  "de la musique", 
@@ -108,7 +108,7 @@ client.on('message', msg => {
 	}
 	
 	// ZIK! Admin
-	if(m=="zik! admins"||m=="zik admins"||m=="zik! admin"||m=="zik admin") {
+	if(command === "admin"||command==="admins") {
 		msg.channel.send({"embed":{
 			"title":"Mes créateurs","description":"Mon développeurs principale est : @legameur6810#4488\nMon dévelopeurs secondaire est : @Théotime#6461\n\nSe sont mes uniques créateur, si une personne essaye de se faire passer pour eux :\n !report @sonspeudo raison\nExemples : !report @legameur6810#4488 Le meilleurs admins",
 			"color":16777215
