@@ -109,8 +109,9 @@ client.on('message', msg => {
 	// Usercount
 	if(command === "usercount") {
 		const nbrmember = msg.member.guild.memberCount;
+		const nbrmembernoBot = nbrmember - 6;
 		msg.channel.send({"embed":{
-			"title":"**:boy: Nombres d'utilisateur :girl: **","description":"Il y a actuellement "+nbrmember+" personnes uniques sur le serveur !",
+			"title":"**:boy: Nombres d'utilisateur :girl: **","description":"Il y a actuellement "+nbrmember+" personnes (dont les bot) uniques sur le serveur !\nIl y a "+nbrmembernoBot+" personnes sans les bots !",
 			"color":16777215
 		}});
 	}
