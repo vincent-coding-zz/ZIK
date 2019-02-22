@@ -101,7 +101,7 @@ client.on('message', msg => {
 	}
 	
 	// Usercount
-	if(command === "usercount"|| command === "users") {
+	if(command === "usercount") {
 		const nbrmember = msg.member.guild.memberCount;
 		msg.channel.send({"embed":{
 			"title":"**:boy: Nombres d'utilisateur :girl: **","description":"Il y a actuellement "+nbrmember+" personnes uniques sur le serveur !",
@@ -110,14 +110,14 @@ client.on('message', msg => {
 	}
 	
 	// ZIK! Admin
-	if(command === "admin"|| command === "admins") {
+	if(command === "admin") {
 		msg.channel.send({"embed":{
 			"title":"Mes créateurs","description":"Mon développeurs principale est : @legameur6810#4488\nMon dévelopeurs secondaire est : @Théotime#6461\n\nSe sont mes uniques créateur, si une personne essaye de se faire passer pour eux :\n !report @sonspeudo raison\nExemples : !report @legameur6810#4488 Le meilleurs admins",
 			"color":16777215
 		}});
 	}
 
-	if(command === "cat"|| command === "chat") {
+	if(command === "cat") {
 		const chat_index = Math.floor(Math.random() * (chat_list.length - 1) + 1);
 		const chat_index_embed = chat_list[chat_index];
 		const msgmembername = msg.member.user;
@@ -163,19 +163,8 @@ client.on('message', msg => {
 			msg.channel.send(`${suffix}`);
 		}else {
 			msg.delete();
-			if (!suffix) {
-				msg.author.createDM().then(channel => {
-					return channel.send({"embed": {
-						"title": "Erreur de syntaxe",
-						"color": 16711680,
-						"description": "Vous avez faire une erreur de syntaxe, voici la commande :\n\n!say Mon message"
-    					}});
-	 			});
-				return;
-			}
-			
+			if (!suffix) return;
 			msg.channel.send(`${suffix}\n\nCe message a été posté par : ${saymembername}`);
-			
 		}
 	}
 	
