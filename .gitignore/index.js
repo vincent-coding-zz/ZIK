@@ -225,7 +225,7 @@ client.on('message', msg => {
 		const helpmembername = msg.member.user;
 		if(checkchannel === "547833672011743253") {
 			msg.delete()
-			msg.author.createDm().then(channel => {
+			msg.author.createDM().then(channel => {
 				return msg.channel.send({"embed": {
 					"title": "Commande de ZIK!",
 					"color": 16777215,
@@ -236,7 +236,7 @@ client.on('message', msg => {
 		}else {
 			msg.delete();
 			msg.author.createDM().then(channel => {
-				return msg.reply({"embed": {
+				return msg.channel.send({"embed": {
 					"title": "Erreur",
 					"color": 16711680,
 					"description": helpmembername+" ,veuillez executez la commande dans #🤖commande-bot🤖"
