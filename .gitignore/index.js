@@ -160,9 +160,12 @@ client.on('message', msg => {
         				"color": 16711680,
         				"title": "Erreur",
         				"description": "Veuillez indiquer le nom de l'utilisateur à kick !"
-    				}});	
+    				}});
+				return;
+			}else {
+				msg.member.kick()
+				msg.channel.send(`${suffix} à bien été kick !`);
 			}
-			msg.channel.send(`${suffix} à bien été kick !`);
 		}else {
 			msg.delete();
 			msg.channel.send({"embed": {
