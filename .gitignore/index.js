@@ -7,8 +7,8 @@ https://discord.gg/PuU3BSJ
 /*   1 / Variables
 ====================================================== */
 
-const config = require('./config.json'),
-	Discord = require('discord.js'), 
+const Discord = require('discord.js'), 
+      	fs = require('fs'),
 	client = new Discord.Client(),
       	ytdl = require('ytdl-core'),
 	activities_list = [
@@ -40,6 +40,10 @@ const config = require('./config.json'),
       ];
 
 
+const prefix = "!";
+
+
+
 /*   2/ Lancement du bot
 ====================================================== */
 client.on('ready', () => {
@@ -57,10 +61,13 @@ client.on('ready', () => {
 ====================================================== */
 client.on('message', msg => {
 	const prefix = "!";
-	var command = msg.content.split(" ")[0].slice(prefix.content).toLowerCase(),
+	var command = msg.content.split(" ")[0].slice(prefix.length).toLowerCase(),
        		args = msg.content.split(" ").slice(1);
     	let suffix = args.join(" ");
 	
+	if(!msg.content.startsWith(prefix)) {
+	   return;
+	}
 	
 	function isAdmin(){
 		if (msg.author.id == "483335511159865347" || msg.author.id == "467630539898224661"){
