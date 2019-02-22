@@ -231,7 +231,7 @@ client.on('message', msg => {
 				return msg.reply({"embed": {
 					"title": "Erreur",
 					"color": 16711680,
-					"description": ${helpmembername}+" ,veuillez executez la commande dans #🤖commande-bot🤖"
+					"description": helpmembername+" ,veuillez executez la commande dans #🤖commande-bot🤖"
 				}});
 	 		});
 			return;
