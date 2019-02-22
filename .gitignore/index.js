@@ -10,6 +10,7 @@ https://discord.gg/PuU3BSJ
 const config = require('./config.json'),
 	Discord = require('discord.js'), 
 	client = new Discord.Client(),
+        prefix = "!",
       	ytdl = require('ytdl-core'),
 	activities_list = [
 	  "",
@@ -56,8 +57,7 @@ client.on('ready', () => {
 /*   3 / Functions
 ====================================================== */
 client.on('message', msg => {
-	const prefix = "!";
-	var command = msg.content.split(" ")[0].slice(prefix.values).toLowerCase(),
+	var command = msg.content.split(" ")[0].slice(prefix.lenght).toLowerCase(),
        		args = msg.content.split(" ").slice(1);
     	let suffix = args.join(" ");
 	
