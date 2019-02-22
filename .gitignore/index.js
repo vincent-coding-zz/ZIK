@@ -235,7 +235,7 @@ client.on('message', msg => {
 	}
 	
 	// commande executable que dans #commande bit
-	if(command === "help"||command === "aide"||command === "aides") {
+	if(command === "test") {
 		const checkchannel = msg.channel.id;
 		const helpmembername = msg.member.user;
 		if(checkchannel === "547833672011743253") {
