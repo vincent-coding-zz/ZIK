@@ -226,7 +226,7 @@ client.on('message', msg => {
 		if(checkchannel === "547833672011743253") {
 			msg.delete()
 			msg.author.createDM().then(channel => {
-				return msg.channel.send({"embed": {
+				return channel.send({"embed": {
 					"title": "Commande de ZIK!",
 					"color": 16777215,
 					"description": "Voici le prefix de ZIK! : !\n\n:ferris_wheel: Commande fun :ferris_wheel: \n!dog : Montre une image aléatoire de chien\n!cat : Montre une image aléatoire de chat\n\n:pencil2: Commande utile :pencil2: \n!usercount : Donne le nombre d'utilisateurs sur le serveur\n!say votre message : Affiche votre message\n!code votre code : Affiche votre code\n!aide ou !help : Affiche les commande de ZIK!"
