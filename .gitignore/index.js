@@ -11,7 +11,6 @@ const config = require('./config.json'),
 	Discord = require('discord.js'), 
 	client = new Discord.Client(),
       	ytdl = require('ytdl-core'),
-        prefix = "!",
 	activities_list = [
 	  "",
 	  "de la musique", 
@@ -57,9 +56,12 @@ client.on('ready', () => {
 /*   3 / Functions
 ====================================================== */
 client.on('message', msg => {
-	var command = msg.content.replace(prefix, ""),
-        	args = msg.content.split(" ").slice(1);
+	const prefix = "!";
+	var command = msg.content.split(" ")[0].slice(prefix).toLowerCase(),
+       		args = msg.content.split(" ").slice(1);
     	let suffix = args.join(" ");
+	
+	
 	function isAdmin(){
 		if (msg.author.id == "483335511159865347" || msg.author.id == "467630539898224661"){
 			return true;
@@ -108,7 +110,7 @@ client.on('message', msg => {
 	}
 	
 	// ZIK! Admin
-	if(command === "admin"||command === "admins") {
+	if(command === "admin"|| command === "admins") {
 		msg.channel.send({"embed":{
 			"title":"Mes créateurs","description":"Mon développeurs principale est : @legameur6810#4488\nMon dévelopeurs secondaire est : @Théotime#6461\n\nSe sont mes uniques créateur, si une personne essaye de se faire passer pour eux :\n !report @sonspeudo raison\nExemples : !report @legameur6810#4488 Le meilleurs admins",
 			"color":16777215
