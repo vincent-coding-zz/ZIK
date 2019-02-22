@@ -202,7 +202,7 @@ client.on('message', msg => {
 				return;
 			}
 			
-			msg.channel.send(`\`\`\`Markdown\n${suffix}\`\`\`\n\n Posté par un administrateur.`);
+			msg.channel.send(`\`\`\`Markdown\n${suffix}\`\`\`\n Posté par un administrateur.`);
 		}else {
 			msg.delete();
 			if (!suffix) {
@@ -215,11 +215,28 @@ client.on('message', msg => {
 	 			});
 				return;
 			};
-			msg.channel.send(`\`\`\`Markdown\n${suffix}\`\`\`\n\n Posté par ${saymembername}`);
+			msg.channel.send(`\`\`\`Markdown\n${suffix}\`\`\`\n Posté par ${saymembername}`);
 		}
 	}
 	
-	
+	//help or aide
+	if(command === "help"||command === "aide"||command === "aides") {
+		const checkchannel = msg.channel.id;
+		const helpmembername = msg.member.user;
+		if(checkchannel = "547833672011743253") {
+				msg.delete()
+		}else {
+			msg.delete();
+			msg.author.createDM().then(channel => {
+				return msg.reply({"embed": {
+					"title": "Erreur",
+					"color": 16711680,
+					"description": ${helpmembername}+" ,veuillez executez la commande dans #🤖commande-bot🤖"
+				}});
+	 		});
+			return;
+		}
+	}
 });
 
 
