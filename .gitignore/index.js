@@ -57,9 +57,9 @@ client.on('ready', () => {
 /*   3 / Functions
 ====================================================== */
 client.on('message', msg => {
-	var command = msg.content.split(" ").replace("!").toLowerCase(),
-		args = msg.content.split(" ").slice(1);
-	let suffix = args.join(" ");
+	var command = msg.content.replace(prefix),
+        	args = msg.content.split(" ").slice(1);
+    	let suffix = args.join(" ");
 	function isAdmin(){
 		if (msg.author.id == "483335511159865347" || msg.author.id == "467630539898224661"){
 			return true;
