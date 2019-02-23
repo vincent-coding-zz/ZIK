@@ -69,8 +69,7 @@ client.on('message', msg => {
 	}
 	
 	function isAdmin(){
-		const rolesnames = msg.author.role.find('name' ,'Administrateurs');
-		if (rolesnames === "true"){
+		if (msg.member.roles.find('name', 'Administrateurs'){
 			return true;
 		} else {
 			return false;
