@@ -69,7 +69,8 @@ client.on('message', msg => {
 	}
 	
 	function isAdmin(){
-		if (msg.author.id == "483335511159865347" || msg.author.id == "467630539898224661"){
+		const rolesnames = msg.author.role.find('name' ,'Administrateurs');
+		if (rolesnames === "true"){
 			return true;
 		} else {
 			return false;
@@ -203,7 +204,7 @@ client.on('message', msg => {
 				return;
 			}
 			
-			msg.channel.send(`\`\`\`Markdown\n${suffix}\`\`\`\n Posté par un administrateur.`);
+			msg.channel.send(`\`\`\`Markdown\n${suffix}\`\`\``);
 		}else {
 			msg.delete();
 			if (!suffix) {
