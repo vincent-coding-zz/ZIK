@@ -69,7 +69,7 @@ client.on('message', msg => {
 	}
 	
 	function isAdmin(){
-		if (msg.member.roles.find('name', 'Administrateurs'){
+		if (msg.member.roles.find('name', 'Administrateurs')){
 			return true;
 		} else {
 			return false;
