@@ -228,7 +228,7 @@ client.on('message', msg => {
 				return channel.send({"embed": {
 					"title": "Commande de ZIK!",
 					"color": 16777215,
-					"description": "Voici le prefix de ZIK! : !\n\n:ferris_wheel: Commande fun :ferris_wheel: \n!dog : Montre une image aléatoire de chien\n!cat : Montre une image aléatoire de chat\n\n:pencil2: Commande utile :pencil2: \n!usercount : Donne le nombre d'utilisateurs sur le serveur\n!say votre message : Affiche votre message\n!code votre code : Affiche votre code\n!aide ou !help : Affiche les commande de ZIK!"
+					"description": "Voici le prefix de ZIK! : !\n\n:ferris_wheel: Commande fun :ferris_wheel: \n!`dog` : Montre une image aléatoire de chien\n!`cat` : Montre une image aléatoire de chat\n\n:pencil2: Commande utile :pencil2: \n`!usercount` : Donne le nombre d'utilisateurs sur le serveur\n`!say` votre message : Affiche votre message\n`!code` votre code : Affiche votre code\n`!aide` ou `!help` : Affiche les commande de ZIK!"
 				   }});
 		});
 		msg.reply("La liste des commandes vous à été envoyé en mp !");
