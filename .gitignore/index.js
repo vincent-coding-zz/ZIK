@@ -69,7 +69,7 @@ client.on('message', msg => {
 	}
 	
 	function isAdmin(){
-		if (msg.member.roles.find('name', 'Administrateurs')){
+		if (msg.member.roles.find('name', 'Fondateurs')){
 			return true;
 		} else {
 			return false;
@@ -101,10 +101,6 @@ client.on('message', msg => {
 	
 /*   4 / Custom commande 
 ====================================================== */
-	// Réponds a Roboto
-	if (msg.content == "Hey, je suis prêt à faire feu !"){
-		msg.channel.send('Cool ta vie !');
-	}
 	
 	// Usercount
 	if(command === "usercount") {
