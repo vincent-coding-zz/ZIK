@@ -89,14 +89,6 @@ client.on('message', msg => {
 	// Pour éviter que le bot se réponde tout seul
 	if (msg.author.bot) return false;
 	if (msg.channel.type == "dm") return false;
-
-	if ( msg.member.roles.find(val => val.name === 'Muted')) {
-		msg.delete();
-		msg.author.createDM().then(channel => {
-			return channel.send('Désolé, vous avez été mute car vous n\'avez pas respecté les <#540256081293606915>');
-	 	});
-		return false;
-	}
 	
 
 	
@@ -117,7 +109,7 @@ client.on('message', msg => {
 	// ZIK! Admin
 	if(command === "admin") {
 		msg.channel.send({"embed":{
-			"title":"Mes créateurs","description":"Mon développeurs principal est : @vcoding#4488\nMon dévelopeurs secondaire est : @Théotime#6461\n\nSe sont mes uniques créateur, si une personne essaye de se faire passer pour eux :\n !report @sonspeudo raison\nExemples : !report @legameur6810#4488 Le meilleurs admins",
+			"title":"Mes créateurs","description":"Mon développeurs principal est : @vcoding#4488\nMon dévelopeurs secondaire est : @Théotime#6461\n\nSe sont mes uniques créateur !",
 			"color":16777215
 		}});
 	}
@@ -250,7 +242,7 @@ client.on('message', msg => {
 				msg.channel.send({"embed": {
 					"title": "FakeBan",
 					"color": 16777215,
-					"description": "Lancement du ban pour " + FakeBanName
+					"description": "Lancement du ban pour **" + FakeBanName + "**"
 				}});
 			}
 		}
