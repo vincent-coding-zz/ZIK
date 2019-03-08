@@ -233,6 +233,7 @@ client.on('message', msg => {
 	// cFakeBAN
 	if(command === "fakeban") {
 		if(isAdmin) {
+			const FakeBanName = suffix;
 			msg.delete();
 			if(!suffix) {
 				msg.author.createDM().then(channel => {
@@ -244,7 +245,11 @@ client.on('message', msg => {
 					}});
 				});
 			}
-			msg.channel.send(`${suffix}`);
+			msg.channel.send({"embed": {
+				"title": "FakeBan",
+				"color": 16777215,
+				"description": "Lancement du ban pour " + FakeBanName
+			}});
 		}
 	}
 });
