@@ -232,11 +232,20 @@ client.on('message', msg => {
 	
 	// cFakeBAN
 	if(command === "fakeban") {
-		msg.delete();
-		if(!suffix) {
-			msg.reply("ok");
+		if(isAdmin) {
+			msg.delete();
+			if(!suffix) {
+				msg.author.createDM().then(channel => {
+					return channel.send({
+					    "embed": {
+						"title": "Erreur syntaxe",
+						"color": 16711680,
+						"description": "Erreur dans la syntaxe.\nVoici le type de syntaxe : \n!fakeban @Théotime"
+					}});
+				});
+			}
+			msg.channel.send(`${suffix}`);
 		}
-		msg.channel.send(`${suffix}`);
 	}
 });
 
