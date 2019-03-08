@@ -245,7 +245,6 @@ client.on('message', msg => {
 					"description": "Lancement du ban pour **" + FakeBanName + "**"
 				}});
 				msg.author.createDM().then(channel => {
-					
 					return channel.send({"embed": {
 						"color": 16711680,
 						"description": "Nous sommes désolé mais vous avez été ban du serveur **Théotime.me** car vous n'avez pas respecter les règles.\nVotre sanction est **permanante** !\n\n*Si vous voulez contesté votre ban, merci de contacter un des administrateurs du serveur !*\n*Les message du genre : **`Jsuis ban pour rien`** ne sont pas accepter !*",
