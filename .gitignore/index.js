@@ -1,7 +1,9 @@
-/* ZIK! Bot
-Created by legameur6810#4488
-For the server Theotime.me
-https://discord.gg/PuU3BSJ
+/* 							ZIK! Bot
+						Created by vcoding#4488
+						    @vincent_coding
+
+						For the server Theotime.me
+						https://discord.gg/PuU3BSJ
 */
 
 /*   1 / Variables
@@ -115,7 +117,7 @@ client.on('message', msg => {
 	// ZIK! Admin
 	if(command === "admin") {
 		msg.channel.send({"embed":{
-			"title":"Mes créateurs","description":"Mon développeurs principal est : @legameur6810#4488\nMon dévelopeurs secondaire est : @Théotime#6461\n\nSe sont mes uniques créateur, si une personne essaye de se faire passer pour eux :\n !report @sonspeudo raison\nExemples : !report @legameur6810#4488 Le meilleurs admins",
+			"title":"Mes créateurs","description":"Mon développeurs principal est : @vcoding#4488\nMon dévelopeurs secondaire est : @Théotime#6461\n\nSe sont mes uniques créateur, si une personne essaye de se faire passer pour eux :\n !report @sonspeudo raison\nExemples : !report @legameur6810#4488 Le meilleurs admins",
 			"color":16777215
 		}});
 	}
@@ -244,18 +246,22 @@ client.on('message', msg => {
 						"description": "Erreur dans la syntaxe.\nVoici le type de syntaxe : \n!fakeban @Théotime"
 					}});
 				});
+			}else {
+				msg.channel.send({"embed": {
+					"title": "FakeBan",
+					"color": 16777215,
+					"description": "Lancement du ban pour " + FakeBanName
+				}});
 			}
-			msg.channel.send({"embed": {
-				"title": "FakeBan",
-				"color": 16777215,
-				"description": "Lancement du ban pour " + FakeBanName
-			}});
 		}
 	}
 });
+/*   5 / Musique commande
+====================================================== */
 
 
-/*   5 / Login
+
+/*   6 / Login
 ====================================================== */
 
 client.login(process.env.TOKEN);
