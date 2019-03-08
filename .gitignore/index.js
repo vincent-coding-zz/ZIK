@@ -230,15 +230,13 @@ client.on('message', msg => {
 		msg.reply("La liste des commandes vous à été envoyé en mp !");
 	}
 	
-	// commande executable que dans #commande bit
-	if(command === "test") {
-		const checkchannel = msg.channel.id;
-		const helpmembername = msg.member.user;
-		if(checkchannel === "547833672011743253") {
-			msg.channel.send(`Bravo ${helpmembername} tu as trouvé le bon channel :p`);
-		}else {
-			msg.channel.send("Tu ne peut pas utiliser cette commande ici");
+	// cFakeBAN
+	if(command === "fakeban") {
+		msg.delete();
+		if(!suffix) {
+			msg.reply("ok");
 		}
+		msg.channel.send(`${suffix}`);
 	}
 });
 
