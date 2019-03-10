@@ -259,12 +259,12 @@ client.on('message', msg => {
 	if(command === "profil") {		
 		const profilenames = msg.member.user;
 		msg.channel.send({"embed": {
-			"title": ":girl: Profil de :boy:" + profilenames + " :",
+			"title": ":girl: Profil :boy:",
 			"color": 16777215,
 			"fields": [
 			    {
 				"name": ":girl: Pseudo :boy:",
-				"value": "test",
+				"value": profilenames,
 				"inline": true
 			    }
 			]
