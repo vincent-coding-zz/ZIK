@@ -260,7 +260,8 @@ client.on('message', msg => {
 		const profilenames = msg.member.user,
 		      profileid = msg.member.id,
 		      profilehightrole = msg.member.highestRole,
-		      profilestatus = msg.member.presence;
+		      profilestatus = msg.member.presence,
+		      profileimage = msg.member.displayAvatarURL;
 		msg.channel.send({"embed": {
 			"title": ":girl: Profil :boy:",
 			"color": 16777215,
@@ -285,7 +286,10 @@ client.on('message', msg => {
 				 "value": ""+profilestatus+"",
 				 "inline": true
 			    }
-			]
+			],
+			"thumbnail": {
+            			"url": ""+profileimage+""
+			}
     		}});
 	}
 });
