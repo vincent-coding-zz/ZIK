@@ -260,8 +260,7 @@ client.on('message', msg => {
 		const profilenames = msg.member.user,
 		      profileid = msg.member.id,
 		      profilehightrole = msg.member.highestRole,
-		      profilestatus = msg.member.presence,
-		      profileimage = msg.member.displayAvatarURL;
+		      profilestatus = msg.member.presence;
 		msg.channel.send({"embed": {
 			"title": ":girl: Profil :boy:",
 			"color": 16777215,
@@ -286,15 +285,8 @@ client.on('message', msg => {
 				 "value": ""+profilestatus+"",
 				 "inline": true
 			    }
-			],
-			"thumbnail": {
-            			"url": ""
-			}
+			]
     		}});
-	}
-	if(command === "testing") {
-		const profileimage = msg.member.avatarURL;
-		msg.channel.send(`${profileimage}`);
 	}
 });
 /*   5 / Musique commande
