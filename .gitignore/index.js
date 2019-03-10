@@ -257,7 +257,7 @@ client.on('message', msg => {
 	
 	// Profil
 	if(command === "profil") {		
-		var profilname = msg.member.user,
+		const profilname = msg.member.user,
 		    profilid = "INSERTID";
 		msg.channel.send({"embed": {
 			"color": 16777215,
