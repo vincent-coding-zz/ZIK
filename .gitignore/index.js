@@ -256,25 +256,14 @@ client.on('message', msg => {
 	}
 	
 	// Profil
-	if(command === "profil") {
-		msg.channel.send({
-		    "embed": {
-			"color": 16777215,
-			"title": ":girl: Profil de :boy:",
-			"fields": [
-			    {
-				"name": ":girl: Pseudo :boy:",
-				"value": "PSEUDOVALUE",
-				"inline": true
-			    },
-			    {
-				"name": ":id: ID",
-				"value": "IDVALUE",
-				"inline": true
-			    }
-			]
-		    }
-		});
+	if(command === "profil") {		
+		var profilname = msg.member.user;
+		var profilembed = new Discord.RichEmbed()
+			.setTitle(":boy: Profil de" + ${profilname})
+			.setDescription("Ceci est une description embed et 1+1 font 42")
+			.setColor("0xFFFFFF")
+			.setFooter("Même sur discordjs on as un footer")
+		msg.channel.sendEmbed(profilembed);
 	}
 });
 /*   5 / Musique commande
