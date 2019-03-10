@@ -293,7 +293,7 @@ client.on('message', msg => {
     		}});
 	}
 	if(command === "testing") {
-		const profileimage = msg.member.displayAvatarURL;
+		const profileimage = msg.member.avatarURL;
 		msg.channel.send(`${profileimage}`);
 	}
 });
