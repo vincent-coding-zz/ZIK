@@ -257,7 +257,8 @@ client.on('message', msg => {
 	
 	// Profil
 	if(command === "profil") {		
-		const profilenames = msg.member.user;
+		const profilenames = msg.member.user,
+		      profileid = msg.member.id;
 		msg.channel.send({"embed": {
 			"title": ":girl: Profil :boy:",
 			"color": 16777215,
@@ -266,7 +267,13 @@ client.on('message', msg => {
 				"name": ":girl: Pseudo :boy:",
 				"value": ""+profilenames+"",
 				"inline": true
+			    },
+			    {
+				"name": ":id:",
+				"value": ""+profileid+"",
+				"inline": true
 			    }
+				
 			]
     		}});
 	}
