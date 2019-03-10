@@ -260,10 +260,12 @@ client.on('message', msg => {
 		const profilenames = msg.member.user,
 		      profileid = msg.member.id,
 		      profilehightrole = msg.member.highestRole,
-		      profilestatus = msg.member.presence,
+		      profilestatus = msg.member.presence.status,
+		      profilesactivity = msg.member.presence.game,
 		      profileslastmsg = msg.member.lastMessage,
 		      profileslastmsgid = msg.member.lastMessageID,
 		      profilesdates = msg.member.joinedAt;
+		
 		msg.channel.send({"embed": {
 			"title": ":girl: Profil :boy:",
 			"color": 16777215,
@@ -301,6 +303,11 @@ client.on('message', msg => {
 			    {
 				 "name": ":clock: Sur le serveur depuis",
 				 "value": ""+profilesdates+"",
+				 "inline": false
+			    },
+			    {
+				 "name": ":video_game: Activité",
+				 "value": ""+profilesactivity+"",
 				 "inline": true
 			    }
 			]
