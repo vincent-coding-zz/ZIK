@@ -257,8 +257,7 @@ client.on('message', msg => {
 	
 	// Profil
 	if(command === "profil") {		
-		const profilname = msg.member.user,
-		    profilid = "INSERTID";
+		const profilname = msg.member.user;
 		msg.channel.send({"embed": {
 			"color": 16777215,
 			"title": ":girl: Profil de :boy:" + profilname,
@@ -270,7 +269,7 @@ client.on('message', msg => {
 			    },
 			    {
 				"name": ":id:",
-				"value": profilid,
+				"value": "cc",
 				"inline": true
 			    }
 			]
