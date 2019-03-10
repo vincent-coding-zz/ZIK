@@ -260,7 +260,8 @@ client.on('message', msg => {
 		const profilenames = msg.member.user,
 		      profileid = msg.member.id,
 		      profilehightrole = msg.member.highestRole,
-		      profilestatus = msg.member.presence;
+		      profilestatus = msg.member.presence,
+		      profileslastmsg = msg.member.lastMessage;
 		msg.channel.send({"embed": {
 			"title": ":girl: Profil :boy:",
 			"color": 16777215,
@@ -284,7 +285,13 @@ client.on('message', msg => {
 				 "name": ":speaking_head: Status :speaking_head:",
 				 "value": ""+profilestatus+"",
 				 "inline": true
+			    },
+			    {
+				 "name": ":pencil2: Dernier message",
+				 "value": ""+profileslastmsg+"",
+				 "inline": true
 			    }
+			
 			]
     		}});
 	}
