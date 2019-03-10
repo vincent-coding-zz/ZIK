@@ -264,7 +264,7 @@ client.on('message', msg => {
 			"fields": [
 			    {
 				"name": ":girl: Pseudo :boy:",
-				"value": profilenames,
+				"value": ""+profilenames+"",
 				"inline": true
 			    }
 			]
