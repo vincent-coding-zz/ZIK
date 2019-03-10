@@ -284,7 +284,7 @@ client.on('message', msg => {
 				 "name": ":speaking_head: Status :speaking_head:",
 				 "value": ""+profilestatus+"",
 				 "inline": true
-				
+			    }
 			]
     		}});
 	}
