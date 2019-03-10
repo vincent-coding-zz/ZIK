@@ -258,7 +258,8 @@ client.on('message', msg => {
 	// Profil
 	if(command === "profil") {		
 		const profilenames = msg.member.user,
-		      profileid = msg.member.id;
+		      profileid = msg.member.id,
+		      profilehightrole = msg.member.highestRole;
 		msg.channel.send({"embed": {
 			"title": ":girl: Profil :boy:",
 			"color": 16777215,
@@ -271,6 +272,11 @@ client.on('message', msg => {
 			    {
 				"name": ":id:",
 				"value": ""+profileid+"",
+				"inline": true
+			    },
+			    {
+				"name": "Role le plus haut",
+				"value": ""+profilehightrole+"",
 				"inline": true
 			    }
 				
