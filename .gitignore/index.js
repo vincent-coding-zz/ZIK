@@ -261,15 +261,10 @@ client.on('message', msg => {
 		      profileid = msg.member.id,
 		      profilehightrole = msg.member.highestRole,
 		      profilestatus = msg.member.presence.status,
+		      profilesactivity = msg.member.presence.game,
 		      profileslastmsg = msg.member.lastMessage,
 		      profileslastmsgid = msg.member.lastMessageID,
 		      profilesdates = msg.member.joinedAt;
-		
-		if(msg.member.presence.game = "null"){
-			const profilesactivity = "Aucune activité";
-		}else{
-			const profilesactivity = msg.member.presence.game;	
-		}
 		
 		
 		msg.channel.send({"embed": {
