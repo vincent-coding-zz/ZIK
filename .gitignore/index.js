@@ -257,13 +257,24 @@ client.on('message', msg => {
 	
 	// Profil
 	if(command === "profil") {		
-		var profilname = msg.member.user;
-		var profilembed = new Discord.RichEmbed()
-			.setTitle(":boy: Profil de" + ${profilname})
-			.setDescription("Ceci est une description embed et 1+1 font 42")
-			.setColor("0xFFFFFF")
-			.setFooter("Même sur discordjs on as un footer")
-		msg.channel.sendEmbed(profilembed);
+		var profilname = msg.member.user,
+			profilid = msg.member.user.id;
+		msg.channel.send({"embed": {
+			"color": 16777215,
+			"title": ":girl: Profil de :boy:" + profilname,
+			"fields": [
+			    {
+				"name": ":girl: Pseudo :boy:",
+				"value": profilname",
+				"inline": true
+			    },
+			    {
+				"name": ":id:",
+				"value": profilid,
+				"inline": true
+			    }
+			]
+    		}});
 	}
 });
 /*   5 / Musique commande
