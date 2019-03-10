@@ -260,11 +260,11 @@ client.on('message', msg => {
 		const profilname = msg.member.user;
 		msg.channel.send({"embed": {
 			"color": 16777215,
-			"title": ":girl: Profil de :boy:" + profilname,
+			"title": ":girl: Profil de :boy:" + profilname + " :",
 			"fields": [
 			    {
 				"name": ":girl: Pseudo :boy:",
-				"value": profilname,
+				"value": "test",
 				"inline": true
 			    },
 			    {
