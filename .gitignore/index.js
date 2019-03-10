@@ -261,7 +261,9 @@ client.on('message', msg => {
 		      profileid = msg.member.id,
 		      profilehightrole = msg.member.highestRole,
 		      profilestatus = msg.member.presence,
-		      profileslastmsg = msg.member.lastMessage;
+		      profileslastmsg = msg.member.lastMessage,
+		      profileslastmsgid = msg.member.lastMessageID,
+		      profilesdates = msg.member.joinedAt;
 		msg.channel.send({"embed": {
 			"title": ":girl: Profil :boy:",
 			"color": 16777215,
@@ -290,8 +292,17 @@ client.on('message', msg => {
 				 "name": ":pencil2: Dernier message",
 				 "value": ""+profileslastmsg+"",
 				 "inline": true
+			    },
+			    {
+				 "name": ":pencil2: ID du dernier message",
+				 "value": ""+profileslastmsgid+"",
+				 "inline": true
+			    },
+			    {
+				 "name": ":clock: Sur le serveur depuis",
+				 "value": ""+profilesdates+"",
+				 "inline": true
 			    }
-			
 			]
     		}});
 	}
