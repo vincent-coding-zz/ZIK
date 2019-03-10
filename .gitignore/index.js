@@ -254,6 +254,28 @@ client.on('message', msg => {
 			}
 		}
 	}
+	
+	// Profil
+	if(command === "profil") {
+		msg.channel.send({
+		    "embed": {
+			"color": 16777215,
+			"title": ":girl: Profil de :boy:",
+			"fields": [
+			    {
+				"name": ":girl: Pseudo :boy:",
+				"value": "PSEUDOVALUE",
+				"inline": true
+			    },
+			    {
+				"name": ":id: ID",
+				"value": "IDVALUE",
+				"inline": true
+			    }
+			]
+		    }
+		});
+	}
 });
 /*   5 / Musique commande
 ====================================================== */
