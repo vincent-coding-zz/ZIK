@@ -259,13 +259,14 @@ client.on('message', msg => {
 	if(command === "profil") {		
 		const profilenames = msg.member.user,
 		      profileid = msg.member.id,
-		      profilehightrole = msg.member.highestRole;
+		      profilehightrole = msg.member.highestRole,
+		      profilestatus = msg.member.presence;
 		msg.channel.send({"embed": {
 			"title": ":girl: Profil :boy:",
 			"color": 16777215,
 			"fields": [
 			    {
-				"name": ":girl: Pseudo :boy:",
+				"name": ":bust_in_silhouette: Pseudo",
 				"value": ""+profilenames+"",
 				"inline": true
 			    },
@@ -278,7 +279,11 @@ client.on('message', msg => {
 				"name": "Role le plus haut",
 				"value": ""+profilehightrole+"",
 				"inline": true
-			    }
+			    },
+			    {
+				 "name": ":speaking_head: Status :speaking_head:",
+				 "value": ""+profilestatus+"",
+				 "inline": true
 				
 			]
     		}});
