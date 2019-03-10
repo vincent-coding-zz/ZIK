@@ -288,9 +288,13 @@ client.on('message', msg => {
 			    }
 			],
 			"thumbnail": {
-            			"url": ""+profileimage+""
+            			"url": ""
 			}
     		}});
+	}
+	if(command === "testing") {
+		const profileimage = msg.member.displayAvatarURL;
+		msg.channel.send(`${profileimage}`);
 	}
 });
 /*   5 / Musique commande
