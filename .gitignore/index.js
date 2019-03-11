@@ -57,7 +57,7 @@ client.on('ready', () => {
 	client.user.setActivity('Reload');
 	client.channels.find("id", "554711744279478293").send({"embed": {
 		"title": "Reload",
-		"description": "ZIK! a reload le : " +_d+"/"+m+"/"+y" à : "+h+":"+_m+".",
+		"description": "ZIK! a reload le : " +_d+"/"+m+"/"+y+" à : "+h+":"+_m+".",
 		"color": 16777215
    	}});
 	client.user.setUsername('ZIK!');
