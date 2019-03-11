@@ -267,7 +267,6 @@ client.on('message', msg => {
 	
 	// Profil
 	if(command === "profil") {
-		let member = msg.mentions.members.first() || msg.author;
 		const profilenames = msg.member.user,
 		      profileid = msg.member.id,
 		      profilehightrole = msg.member.highestRole,
