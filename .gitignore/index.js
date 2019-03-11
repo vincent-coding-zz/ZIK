@@ -294,7 +294,7 @@ client.on('message', msg => {
 			    {
 				"name": "◦ Role le plus haut",
 				"value": ""+profilehightrole+"",
-				"inline": false
+				"inline": true
 			    },
 			    {
 				 "name": "◦ Status",
