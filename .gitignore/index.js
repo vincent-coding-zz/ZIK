@@ -317,7 +317,7 @@ client.on('message', msg => {
 	if(command === "play") {
 		if(isAnimateur()) {
 			msg.reply("good");
-		}else{
+		}else if(!isAnimateur()){
 			msg.delete();
 			msg.channel.send("Vous devez être **animateur** pour éxécuter cette commande !");
 		}
