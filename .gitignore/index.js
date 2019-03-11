@@ -292,16 +292,6 @@ client.on('message', msg => {
 				 "inline": true
 			    },
 			    {
-				 "name": ":pencil2: Dernier message",
-				 "value": ""+profileslastmsg+"",
-				 "inline": true
-			    },
-			    {
-				 "name": ":pencil2: ID du dernier message",
-				 "value": ""+profileslastmsgid+"",
-				 "inline": true
-			    },
-			    {
 				 "name": ":clock: Sur le serveur depuis",
 				 "value": ""+profilesdates+"",
 				 "inline": false
