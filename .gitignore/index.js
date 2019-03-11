@@ -44,12 +44,22 @@ const Discord = require('discord.js'),
 const prefix = "!";
 
 
-
 /*   2/ Lancement du bot
 ====================================================== */
 client.on('ready', () => {
+	const   d = new Date(),
+	_d = d.getDate() < 10 ? "0"+d.getDate() : d.getDate(),
+	m = d.getMonth() +1 < 10 ? "0"+(d.getMonth() +1) : d.getMonth() +1,
+	y = d.getFullYear(),
+	h = d.getHours() +1 < 10 ? "0"+(d.getHours() +1) : d.getHours() +1,
+	_m = d.getMinutes() < 10 ? "0"+d.getMinutes() : d.getMinutes();
+	
 	client.user.setActivity('Reload');
-	client.channels.find("id", "539847850666885131").send("ZIK! aime twerker !");
+	client.channels.find("id", "554711744279478293").send({"embed": {
+		"title": "Reload",
+		"description": "ZIK! a reload à :" +_d+"/"+m+"/"+y+h+":"+_m+".",
+		"color": 16777215
+   	}});
 	client.user.setUsername('ZIK!');
 	setInterval(() => {
 	      const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
