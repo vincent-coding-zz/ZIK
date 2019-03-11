@@ -287,28 +287,18 @@ client.on('message', msg => {
 				"inline": true
 			    },
 			    {
-				"name": "◦ID",
+				"name": "◦ ID",
 				"value": ""+profileid+"",
 				"inline": true
 			    },
 			    {
 				"name": "◦ Role le plus haut",
 				"value": ""+profilehightrole+"",
-				"inline": true
+				"inline": false
 			    },
 			    {
 				 "name": "◦ Status",
 				 "value": ""+profilestatus+"",
-				 "inline": true
-			    },
-			    {
-				 "name": "◦ Activité",
-				 "value": ""+profilesactivity+"",
-				 "inline": true
-			    },
-			    {
-				 "name": "◦ Sur le serveur depuis le",
-				 "value": ""+profilesdates+"",
 				 "inline": true
 			    }
 			]
