@@ -278,16 +278,16 @@ client.on('message', msg => {
 		
 		
 		msg.channel.send({"embed": {
-			"title": ":girl: Profil :boy:",
+			"title": "Profil de "+profilenames+" :",
 			"color": 16777215,
 			"fields": [
 			    {
-				"name": ":bust_in_silhouette: ◦ Pseudo",
+				"name": "◦ Pseudo",
 				"value": ""+profilenames+"",
 				"inline": true
 			    },
 			    {
-				"name": ":id:",
+				"name": "◦ID",
 				"value": ""+profileid+"",
 				"inline": true
 			    },
@@ -297,17 +297,17 @@ client.on('message', msg => {
 				"inline": true
 			    },
 			    {
-				 "name": ":speaking_head: ◦ Status",
+				 "name": "◦ Status",
 				 "value": ""+profilestatus+"",
 				 "inline": true
 			    },
 			    {
-				 "name": ":video_game: ◦ Activité",
+				 "name": "◦ Activité",
 				 "value": ""+profilesactivity+"",
 				 "inline": true
 			    },
 			    {
-				 "name": ":clock: ◦ Sur le serveur depuis le",
+				 "name": "◦ Sur le serveur depuis le",
 				 "value": ""+profilesdates+"",
 				 "inline": true
 			    }
