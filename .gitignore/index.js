@@ -314,15 +314,11 @@ client.on('message', msg => {
 /*   5 / Musique commande
 ====================================================== */
 
-	if(command === "play") {
-		if(isAnimateur()) {
-			msg.reply("good");
-		}else if(!isAnimateur()){
-			msg.delete();
-			msg.channel.send("Vous devez être **animateur** pour éxécuter cette commande !");
-		}
-	}
+
+// Fermeture des commandes !
 });
+
+
 /*   6 / Login
 ====================================================== */
 
