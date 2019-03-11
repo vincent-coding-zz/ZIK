@@ -270,7 +270,7 @@ client.on('message', msg => {
 		const profilenames = msg.member.user,
 		      profileid = msg.member.id,
 		      profilehightrole = msg.member.highestRole,
-		      profilestatus = msg.member.presence.status,
+		      profilestatus = msg.author.presence.status == "online" ? "Disponible" : msg.author.presence.status == "idle" ? "Inactif" : msg.author.presence.status == "dnd" ? "Ne pas déranger" : "Invisible",
 		      profilesactivity = msg.member.presence.game,
 		      profileslastmsg = msg.member.lastMessage,
 		      profileslastmsgid = msg.member.lastMessageID,
@@ -309,7 +309,7 @@ client.on('message', msg => {
 			    {
 				 "name": ":clock: ◦ Sur le serveur depuis le",
 				 "value": ""+profilesdates+"",
-				 "inline": false
+				 "inline": true
 			    }
 			]
     		}});
