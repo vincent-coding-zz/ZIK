@@ -315,7 +315,7 @@ client.on('message', msg => {
 ====================================================== */
 
 	if(command === "play") {
-		if(isAnimateur) {
+		if(isAnimateur()) {
 			msg.reply("good");
 		}else{
 			msg.delete();
