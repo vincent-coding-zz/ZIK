@@ -270,15 +270,10 @@ client.on('message', msg => {
 		const profilenames = msg.member.user,
 		      profileid = msg.member.id,
 		      profilehightrole = msg.member.highestRole,
-		      profilestatus = msg.author.presence.status == "online" ? "Disponible" : msg.author.presence.status == "idle" ? "Inactif" : msg.author.presence.status == "dnd" ? "Ne pas déranger" : "Invisible",
-		      profilesactivity = msg.member.presence.game,
-		      profileslastmsg = msg.member.lastMessage,
-		      profileslastmsgid = msg.member.lastMessageID,
-		      profilesdates = msg.member.joinedAt;
-		
+		      profilestatus = msg.author.presence.status == "online" ? "Disponible" : msg.author.presence.status == "idle" ? "Inactif" : msg.author.presence.status == "dnd" ? "Ne pas déranger" : "Invisible";
 		
 		msg.channel.send({"embed": {
-			"title": "Profil de "+profilenames+" :",
+			"title": "Votre profil :",
 			"color": 16777215,
 			"fields": [
 			    {
@@ -303,6 +298,9 @@ client.on('message', msg => {
 			    }
 			]
     		}});
+	}
+	if(command === "testavat") {
+		msg.reply(msg.author.avatarURL);	
 	}
 });
 /*   5 / Musique commande
