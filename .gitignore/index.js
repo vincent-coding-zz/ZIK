@@ -266,7 +266,7 @@ client.on('message', msg => {
 	}
 	
 	// Profil
-	if(command === "profil") {		
+	if(command === "profil") {
 		const profilenames = msg.member.user,
 		      profileid = msg.member.id,
 		      profilehightrole = msg.member.highestRole,
@@ -282,7 +282,7 @@ client.on('message', msg => {
 			"color": 16777215,
 			"fields": [
 			    {
-				"name": ":bust_in_silhouette: Pseudo",
+				"name": ":bust_in_silhouette: ◦ Pseudo",
 				"value": ""+profilenames+"",
 				"inline": true
 			    },
@@ -292,24 +292,24 @@ client.on('message', msg => {
 				"inline": true
 			    },
 			    {
-				"name": "Role le plus haut",
+				"name": "◦ Role le plus haut",
 				"value": ""+profilehightrole+"",
 				"inline": true
 			    },
 			    {
-				 "name": ":speaking_head: Status :speaking_head:",
+				 "name": ":speaking_head: ◦ Status",
 				 "value": ""+profilestatus+"",
 				 "inline": true
 			    },
 			    {
-				 "name": ":clock: Sur le serveur depuis",
-				 "value": ""+profilesdates+"",
-				 "inline": false
-			    },
-			    {
-				 "name": ":video_game: Activité",
+				 "name": ":video_game: ◦ Activité",
 				 "value": ""+profilesactivity+"",
 				 "inline": true
+			    },
+			    {
+				 "name": ":clock: ◦ Sur le serveur depuis le",
+				 "value": ""+profilesdates+"",
+				 "inline": false
 			    }
 			]
     		}});
