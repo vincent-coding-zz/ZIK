@@ -88,6 +88,14 @@ client.on('message', msg => {
 		}
 	}
 	
+	function isAnimateur(){
+			if (msg.member.roles.find('name', 'Animateur/Animatrice')){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	function isAuth(){ // use msg.author
 		if (msg.member.roles.find('name', 'noBot')){
 			return false;
@@ -303,12 +311,18 @@ client.on('message', msg => {
 			}
     		}});
 	}
-});
 /*   5 / Musique commande
 ====================================================== */
 
-
-
+	if(command === "play") {
+		if(isAnimateur) {
+			msg.reply("good");
+		}else{
+			msg.delete();
+			msg.channel.send("Vous devez être **animateur** pour éxécuter cette commande !");
+		}
+	}
+});
 /*   6 / Login
 ====================================================== */
 
