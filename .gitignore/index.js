@@ -270,6 +270,7 @@ client.on('message', msg => {
 		const profilenames = msg.member.user,
 		      profileid = msg.member.id,
 		      profilehightrole = msg.member.highestRole,
+		      profileimg = msg.author.avatarURL,
 		      profilestatus = msg.author.presence.status == "online" ? "Disponible" : msg.author.presence.status == "idle" ? "Inactif" : msg.author.presence.status == "dnd" ? "Ne pas déranger" : "Invisible";
 		
 		msg.channel.send({"embed": {
@@ -296,11 +297,11 @@ client.on('message', msg => {
 				 "value": ""+profilestatus+"",
 				 "inline": true
 			    }
-			]
+			],
+			 "thumbnail": {
+			    "url": profileimg
+			}
     		}});
-	}
-	if(command === "testavat") {
-		msg.reply(msg.author.avatarURL);	
 	}
 });
 /*   5 / Musique commande
