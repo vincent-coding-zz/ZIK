@@ -311,6 +311,10 @@ client.on('message', msg => {
 			}
     		}});
 	}
+	
+	if(command === "testing") {
+		msg.channel.send(msg.author.avatarURL);
+	}
 /*   5 / Musique commande
 ====================================================== */
 
