@@ -280,8 +280,8 @@ client.on('message', msg => {
 		      profilehightrole = msg.member.highestRole,
 		      profileimg = msg.author.avatarURL,
 		      profilestatus = msg.author.presence.status == "online" ? "Disponible" : msg.author.presence.status == "idle" ? "Inactif" : msg.author.presence.status == "dnd" ? "Ne pas déranger" : "Invisible";
-		if(msg.author.avatarURL == ""){
-			const profileimg = "https://discordapp.com/assets/0e291f67c9274a1abdddeb3fd919cbaa.png"
+		if(msg.author.avatarURL == "null"){
+			const profileimg = "https://discordapp.com/assets/0e291f67c9274a1abdddeb3fd919cbaa.png";
 		}
 		msg.channel.send({"embed": {
 			"title": "Votre profil :",
@@ -314,10 +314,6 @@ client.on('message', msg => {
     		}});
 	}
 	
-	if(command === "cc"){
-		const img = msg.author.avatarURL;
-		msg.reply(`${img}`);
-	}
 
 /*   5 / Musique commande
 ====================================================== */
