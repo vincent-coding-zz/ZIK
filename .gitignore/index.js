@@ -313,6 +313,11 @@ client.on('message', msg => {
 			}
     		}});
 	}
+	
+	if(command === "cc"){
+		const img = msg.author.avatarURL;
+		msg.reply(`${img}`);
+	}
 
 /*   5 / Musique commande
 ====================================================== */
